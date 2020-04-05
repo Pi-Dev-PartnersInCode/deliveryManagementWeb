@@ -1,0 +1,62 @@
+back:
+    path:     /admin
+    defaults: { _controller: bikeBundle:Back:index }
+
+livreur_ajout:
+    path:     /ajoutLivreur
+    defaults: { _controller: bikeBundle:Livreur:index }
+
+livreur_affich:
+    path:     /affichlivreur
+    defaults: { _controller: bikeBundle:Livreur:affichlivreur }
+
+livreur_update:
+    path:     /update/{id}
+    defaults: { _controller: bikeBundle:Livreur:edit }
+
+livreur_delete:
+    path:     /delete/{id}
+    defaults: { _controller: bikeBundle:Livreur:delete }
+
+
+bike_homepage:
+    path:     /
+    defaults: { _controller: bikeBundle:Default:index }
+
+table_content:
+    path:     /tablecontent
+    defaults: { _controller: bikeBundle:Livraison:affich }
+
+
+livraison_index:
+    path:     /index
+    defaults: { _controller: bikeBundle:Livraison:index }
+
+livraison_show1:
+    path:     /show
+    defaults: { _controller: bikeBundle:Livraison:show }
+livraison_new:
+    path:     /new
+    defaults: { _controller: bikeBundle:Livraison:new }
+
+livraison_edit:
+    path:     /{id}/edit
+    defaults: { _controller: bikeBundle:Livraison:edit }
+
+livraison_show:
+    path:     /livraison
+    defaults: { _controller: bikeBundle:Livraison:indexx }
+
+livraison_delete:
+    path:     /delete1/{id}
+    defaults: {_controller: bikeBundle:Livraison:delete}
+
+livraison_supp:
+    path:     /delete2/{id}
+    defaults: {_controller: bikeBundle:Livraison:supp}
+
+ajax_search:
+    path:     /search
+    defaults: {_controller: bikeBundle:Livraison:search}
+
+

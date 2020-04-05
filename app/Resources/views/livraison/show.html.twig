@@ -1,0 +1,39 @@
+
+{% block main %}
+    <h1>Livraison</h1>
+
+    <table>
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ livraison.id }}</td>
+        </tr>
+        <tr>
+            <th>Livlib</th>
+            <td>{{ livraison.livLib }}</td>
+        </tr>
+        <tr>
+            <th>Livnum</th>
+            <td>{{ livraison.livnum }}</td>
+        </tr>
+        <tr>
+            <th>Livprix</th>
+            <td>{{ livraison.livprix }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('livraison_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('livraison_edit', { 'id': livraison.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+            <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

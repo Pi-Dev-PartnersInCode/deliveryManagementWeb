@@ -1,0 +1,4 @@
+services:
+#    bike.example:
+#        class: bikeBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

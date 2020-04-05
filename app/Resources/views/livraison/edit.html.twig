@@ -1,0 +1,21 @@
+
+{% block main %}
+    <h1>Livraison edit</h1>
+
+    {{ form_start(edit_form) }}
+    {{ form_widget(edit_form) }}
+    <br>
+    <input style="position:relative;left: 40%"  class="btn btn-outline-dark" type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
+
+    <ul style="list-style: none;">
+        <li>
+            <a class="btn btn-link" href="{{ path('table_content') }}">Back to the list</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+            <input style="position:relative;left: 40%"  class="btn btn-outline-dark" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

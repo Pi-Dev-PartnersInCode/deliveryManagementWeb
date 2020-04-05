@@ -1,0 +1,64 @@
+{% block main %}
+
+{% block table %}
+<div class="row" style="
+    margin: auto;
+    position: fixed ;
+    left: 20%;
+    table-layout: auto;
+    width: 1500px;">
+    <div class="col-lg-6" >
+        <div class="card">
+            <div class="card-header">
+                <strong class="card-title">Table de Livreur</strong>
+            </div>
+            <div class="table-stats order-table ov-h">
+                <table  class="table ">
+                    <thead>
+                    <tr>
+                        <th class="serial">#</th>
+
+                        <th>Login</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>NumeroTel</th>
+                        <th>#Actions</th>
+                    </tr>
+                    </thead>
+                    {% for li in livreurs %}
+                        <tbody>
+                        <tr>
+                            <td class="serial">{{ li.id}}</td>
+
+                            <td> {{ li.username}} </td>
+                            <td>  <span class="name">{{ li.Livprenom}} {{ li.Livnom}}</span> </td>
+                            <td> <span class="product">{{ li.email}}</span> </td>
+                            <td><span class="count">{{ li.Livtel}}</span></td>
+                            <td>
+                                <a class="btn btn-outline-dark" href="{{ path('livreur_update',{'id': li.id}) }}">Edit | Delete</a>
+
+
+
+                            </td>
+                        </tr>
+
+                        </tbody>
+
+
+                    {% endfor %}
+
+
+                </table>
+            </div> <!-- /.table-stats -->
+        </div>
+    </div>
+    <br>
+    {% endblock %}
+    <br>
+    {% block boutton %}
+        <div style="position:absolute; left: 285px; top:100%;">
+            <a class="btn btn-outline-info" href="{{ path('livreur_ajout')}}">Ajout</a>
+        </div>
+
+    {% endblock %}
+    {% endblock %}

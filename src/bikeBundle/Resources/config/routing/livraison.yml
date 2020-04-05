@@ -1,0 +1,24 @@
+livraison_index:
+  path:     /
+  defaults: { _controller: "bikeBundle:Livraison:index" }
+  methods:  GET
+
+livraison_show:
+  path:     /{id}/show
+  defaults: { _controller: "bikeBundle:Livraison:show" }
+  methods:  GET
+
+livraison_new:
+  path:     /new
+  defaults: { _controller: "bikeBundle:Livraison:new" }
+  methods:  [GET, POST]
+
+livraison_edit:
+  path:     /{id}/edit
+  defaults: { _controller: "bikeBundle:Livraison:edit" }
+  methods:  [GET, POST]
+
+livraison_delete:
+  path:     /{id}/delete
+  defaults: { _controller: "bikeBundle:Livraison:delete" }
+  methods:  DELETE

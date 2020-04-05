@@ -1,0 +1,48 @@
+
+{% block main %}
+    <h1>Livreurs list</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Livnom</th>
+            <th>Livprenom</th>
+            <th>Livemail</th>
+            <th>Livlogin</th>
+            <th>Livpassword</th>
+            <th>Livtel</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for livreur in livreurs %}
+            <tr>
+                <td><a href="{{ path('livreur_show', { 'id': livreur.id }) }}">{{ livreur.id }}</a></td>
+                <td>{{ livreur.livNom }}</td>
+                <td>{{ livreur.livPrenom }}</td>
+                <td>{{ livreur.livEmail }}</td>
+                <td>{{ livreur.livLogin }}</td>
+                <td>{{ livreur.livPassword }}</td>
+                <td>{{ livreur.livTel }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('livreur_show', { 'id': livreur.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('livreur_update', { 'id': livreur.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('livreur_new') }}">Create a new livreur</a>
+        </li>
+    </ul>
+{% endblock %}

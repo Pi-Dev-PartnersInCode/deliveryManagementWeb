@@ -1,0 +1,60 @@
+{% extends 'livraison.html.twig' %}
+
+{% block tableau %}
+    {#{% if is_granted('ROLE_ADMIN') %}
+    #}
+    <!-- Orders -->
+    <div class="orders">
+        <div class="row">
+            <div class="col-xl-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="box-title">Commandes </h4>
+                    </div>
+                    <div class="card-body--">
+                        <div class="table-stats order-table ov-h">
+                            <table class="table ">
+                                <thead>
+                                <tr>
+                                    <th class="serial">Ref</th>
+                                    <th>Adresse</th>
+
+                                    <th>Produits</th>
+                                    <th>Prix</th>
+                                    <th>Status</th>
+                                </tr>
+                                </thead>
+                                {% for livraison in livraisons %}
+                                <tbody>
+                                <tr>
+                                    <td class="serial">{{ livraison.x_id }}</td>
+                                    <td>  <span class="name">{{ livraison.x_livraisonAdresse }}</span> </td>
+
+                                    <td> <span class="product">{{ livraison.x_livraisonProduits }}</span> </td>
+                                    <td><span class="count">{{ livraison.x_montantTotal }}</span></td>
+                                    <td>
+
+                                            <span class="btn btn-outline-success"><a href="{{ path('livraison_supp',{'id': livraison.x_id}) }}"> Complete</a>
+                                            </span>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+
+                                </tbody>
+                            </table>
+
+                            <div class="navigation text-center" >
+                                {{ knp_pagination_render(livraisons) }}
+                            </div>
+                        </div> <!-- /.table-stats -->
+                    </div>
+                </div> <!-- /.card -->
+            </div>  <!-- /.col-lg-8 -->
+
+        </div>
+    </div>
+    {#      <!-- /.orders -->
+      {% else %}
+          <h4>ERROR</h4>
+      {% endif %} #}
+{% endblock %}
